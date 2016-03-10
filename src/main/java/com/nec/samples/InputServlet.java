@@ -72,12 +72,9 @@ public class InputServlet extends HttpServlet {
 
 		logger.info( "session id=" + session_id );
 		
-		// 一意な値を生成
 		String newId = UUID.randomUUID().toString();
 		logger.info("---new id :" + newId);
-		// Cookie生成
 		Cookie newCookie = new Cookie("newId", newId);
-		// HttpResponseへCookie追加
 		resp.addCookie(newCookie);
 
 		Connection dbcon = null ;
